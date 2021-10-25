@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+     	
+	
+    <!-- ================== Base ========================-->
+	
+	<ThingDef Name="ArmorJavelinBase" ParentName="ArmorMachineableBase" Abstract="True">
+	<techLevel>Ultra</techLevel>
+	<recipeMaker>
+	  <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+	  <researchPrerequisite>Rimthem_Suits_Research</researchPrerequisite>
+	  <skillRequirements>
+		<Crafting>12</Crafting>
+	  </skillRequirements>
+		<recipeUsers Inherit="False">
+			<li>FabricationBench</li>
+		</recipeUsers>
+	  <workSkill>Crafting</workSkill>
+	</recipeMaker>
+	<generateCommonality>1</generateCommonality>
+	<tickerType>Normal</tickerType>
+	<thingCategories>
+	  <li>ApparelArmor</li>
+	</thingCategories>
+	<apparel>
+	  <careIfWornByCorpse>true</careIfWornByCorpse>
+	<bodyPartGroups>
+		<li>FullHead</li>
+		<li>Torso</li>
+		<li>Neck</li>
+		<li>Shoulders</li>
+		<li>Arms</li>
+		<li>Legs</li>
+		<li>Hands</li>
+		<li>Feet</li>
+	</bodyPartGroups>
+	  <layers>
+		<li>Overhead</li>
+		<li>Middle</li>
+		<li>Shell</li>
+	  </layers>
+	  <tags>
+	  	<li>Royal</li>
+		<li>RoyalTier2</li>
+		<li>SpacerMilitary</li>  <!-- If you want it to show up on NPC Pawns -->
+		<li>EVA</li>			 <!-- build in SOS2 Support  -->
+	  </tags>
+	  <defaultOutfitTags>
+		<li>Soldier</li>
+	  </defaultOutfitTags>
+	  <useDeflectMetalEffect>true</useDeflectMetalEffect>
+	</apparel>
+	<thingSetMakerTags>
+	  <li>RewardSpecial</li>
+	</thingSetMakerTags>
+	<modExtensions>
+		<li Class="FalloutCore.ApparelExtension">
+			<shouldHideBody>true</shouldHideBody>
+			<shouldHideHead>true</shouldHideHead>
+        </li>
+	</modExtensions>
+	</ThingDef>
+  
+	
+	<!-- ================== Collossus ========================-->
+	
+	<ThingDef ParentName="ArmorJavelinBase">
+		<defName>Rimthem_Colossus</defName>
+		<label>Colossus Suit</label>
+		<description>Pending.</description>
+		<graphicData>
+			  <texPath>Things/Display/Colossus</texPath>
+			  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateCommonality>1</generateCommonality>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<MarketValue>2600</MarketValue>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>0.4</Flammability>
+			<ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.60</ArmorRating_Heat>
+			<Insulation_Cold>36</Insulation_Cold>
+			<Insulation_Heat>12</Insulation_Heat>
+			<EquipDelay>14</EquipDelay>
+			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->  <!-- Without an Energyshield DLL this is disabled for now-->
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.3</MoveSpeed>
+			<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+			<PainShockThreshold>0.15</PainShockThreshold>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>150</Plasteel>
+			<Uranium>50</Uranium>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Armor/Javelin/Colossus/Colossus</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+	<!-- ================== Interceptor ========================-->
+	
+	
+	
+	<!-- ================== Ranger ========================-->
+	
+	<ThingDef ParentName="ArmorJavelinBase">
+		<defName>Rimthem_Ranger</defName>
+		<label>Ranger Suit</label>
+		<description>Pending.</description>
+		<graphicData>
+			  <texPath>Things/Display/Ranger</texPath>
+			  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateCommonality>1</generateCommonality>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<MarketValue>2600</MarketValue>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>0.4</Flammability>
+			<ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.60</ArmorRating_Heat>
+			<Insulation_Cold>36</Insulation_Cold>
+			<Insulation_Heat>12</Insulation_Heat>
+			<EquipDelay>14</EquipDelay>
+			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->  <!-- Without an Energyshield DLL this is disabled for now-->
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.3</MoveSpeed>
+			<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+			<PainShockThreshold>0.15</PainShockThreshold>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>150</Plasteel>
+			<Uranium>50</Uranium>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Armor/Javelin/Ranger/Ranger</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+	
+	<!-- ================== Storm ========================-->
+	
+	<ThingDef ParentName="ArmorJavelinBase">
+		<defName>Rimthem_Storm</defName>
+		<label>Storm Suit</label>
+		<description>Pending.</description>
+		<graphicData>
+			  <texPath>Things/Display/Storm</texPath>
+			  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateCommonality>1</generateCommonality>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<MarketValue>2600</MarketValue>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>0.4</Flammability>
+			<ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.60</ArmorRating_Heat>
+			<Insulation_Cold>36</Insulation_Cold>
+			<Insulation_Heat>12</Insulation_Heat>
+			<EquipDelay>14</EquipDelay>
+			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->  <!-- Without an Energyshield DLL this is disabled for now-->
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.3</MoveSpeed>
+			<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+			<PainShockThreshold>0.15</PainShockThreshold>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>150</Plasteel>
+			<Uranium>50</Uranium>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Armor/Javelin/Storm/Storm</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+</Defs>

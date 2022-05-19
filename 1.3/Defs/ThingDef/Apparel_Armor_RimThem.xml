@@ -1,76 +1,72 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-     	
-	
-    <!-- ================== Base ========================-->
-	
+	<!-- ================== Base ========================-->
 	<ThingDef Name="ArmorJavelinBase" ParentName="ArmorMachineableBase" Abstract="True">
-	<techLevel>Ultra</techLevel>
-	<recipeMaker>
-	  <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-	  <researchPrerequisite>Rimthem_Suits_Research</researchPrerequisite>
-	  <skillRequirements>
-		<Crafting>12</Crafting>
-	  </skillRequirements>
-		<recipeUsers Inherit="False">
-			<li>FabricationBench</li>
-		</recipeUsers>
-	  <workSkill>Crafting</workSkill>
-	</recipeMaker>
-	<generateCommonality>1</generateCommonality>
-	<tickerType>Normal</tickerType>
-	<thingCategories>
-	  <li>ApparelArmor</li>
-	</thingCategories>
-	<apparel>
-	  <careIfWornByCorpse>true</careIfWornByCorpse>
-	<bodyPartGroups>
-		<li>FullHead</li>
-		<li>Torso</li>
-		<li>Neck</li>
-		<li>Shoulders</li>
-		<li>Arms</li>
-		<li>Legs</li>
-		<li>Hands</li>
-		<li>Feet</li>
-	</bodyPartGroups>
-	  <layers>
-		<li>Overhead</li>
-		<li>Middle</li>
-		<li>Shell</li>
-	  </layers>
-	  <tags>
-	  	<li>Royal</li>
-		<li>RoyalTier2</li>
-		<li>SpacerMilitary</li>  <!-- If you want it to show up on NPC Pawns -->
-		<li>EVA</li>			 <!-- build in SOS2 Support  -->
-	  </tags>
-	  <defaultOutfitTags>
-		<li>Soldier</li>
-	  </defaultOutfitTags>
-	  <useDeflectMetalEffect>true</useDeflectMetalEffect>
-	</apparel>
-	<thingSetMakerTags>
-	  <li>RewardSpecial</li>
-	</thingSetMakerTags>
-	<modExtensions>
-		<li Class="FalloutCore.ApparelExtension">
-			<shouldHideBody>true</shouldHideBody>
-			<shouldHideHead>true</shouldHideHead>
-        </li>
-	</modExtensions>
+		<techLevel>Ultra</techLevel>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<researchPrerequisite>Rimthem_Suits_Research</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<workSkill>Crafting</workSkill>
+		</recipeMaker>
+		<generateCommonality>1</generateCommonality>
+		<tickerType>Normal</tickerType>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<apparel>
+			<careIfWornByCorpse>true</careIfWornByCorpse>
+			<bodyPartGroups>
+				<li>FullHead</li>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>Hands</li>
+				<li>Feet</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>Royal</li>
+				<li>RoyalTier2</li>
+				<li>SpacerMilitary</li>
+				<!-- If you want it to show up on NPC Pawns -->
+				<li>EVA</li>
+				<!-- build in SOS2 Support  -->
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+		</apparel>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
+		<modExtensions>
+			<li Class="FalloutCore.ApparelExtension">
+				<shouldHideBody>true</shouldHideBody>
+				<shouldHideHead>true</shouldHideHead>
+			</li>
+		</modExtensions>
 	</ThingDef>
-  
-	
 	<!-- ================== Collossus ========================-->
-	
 	<ThingDef ParentName="ArmorJavelinBase">
 		<defName>Rimthem_Colossus</defName>
 		<label>Colossus Suit</label>
 		<description>Pending.</description>
 		<graphicData>
-			  <texPath>Things/Display/Colossus</texPath>
-			  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Display/Colossus</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<generateCommonality>1</generateCommonality>
 		<tickerType>Normal</tickerType>
@@ -87,7 +83,8 @@
 			<Insulation_Heat>12</Insulation_Heat>
 			<EquipDelay>14</EquipDelay>
 			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
-			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->  <!-- Without an Energyshield DLL this is disabled for now-->
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->
+			<!-- Without an Energyshield DLL this is disabled for now-->
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>0.3</MoveSpeed>
@@ -102,20 +99,147 @@
 		<apparel>
 			<wornGraphicPath>Things/Armor/Javelin/Colossus/Colossus</wornGraphicPath>
 		</apparel>
+		<comps>
+			<!-- You can remove this component if needed. Should work, but I haven't tested-->
+			<li Class="CompProperties_Reloadable">
+				<maxCharges>5</maxCharges>
+				<ammoDef>Chemfuel</ammoDef>
+				<ammoCountPerCharge>20</ammoCountPerCharge>
+				<baseReloadTicks>60</baseReloadTicks>
+				<soundReload>Standard_Reload</soundReload>
+				<chargeNoun>charge</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+		<verbs>
+			<li Class="SuitAbilities.Verbs.VerbProperties_Suit">
+				<label>triple launch</label>
+				<verbClass>SuitAbilities.Verbs.Verb_LaunchProjectileStatic</verbClass>
+				<commandIcon>Things/Display/Colossus</commandIcon>
+				<!-- TODO icon path -->
+				<hasStandardCommand>true</hasStandardCommand>
+				<onlyManualCast>True</onlyManualCast>
+				<range>40</range>
+				<forcedMissRadius>6</forcedMissRadius>
+				<warmupTime>1.5</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>Shot_IncendiaryLauncher</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Bullet_Suit</defaultProjectile>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+				<burstShotCount>3</burstShotCount>
+				<stopBurstWithoutLos>false</stopBurstWithoutLos>
+				<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+			</li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Suit</defName>
+		<label>high-explosive shell</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShellHighExplosive</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>41</speed>
+			<explosionRadius>6</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
 	</ThingDef>
 	<!-- ================== Interceptor ========================-->
-	
-	
-	
+	<ThingDef ParentName="ArmorJavelinBase">
+		<defName>Rimthem_Interceptor</defName>
+		<label>Interceptor Suit</label>
+		<description>Pending.</description>
+		<graphicData>
+			<texPath>Things/Display/Interceptor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateCommonality>1</generateCommonality>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<MarketValue>2600</MarketValue>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>0.4</Flammability>
+			<ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.60</ArmorRating_Heat>
+			<Insulation_Cold>36</Insulation_Cold>
+			<Insulation_Heat>12</Insulation_Heat>
+			<EquipDelay>14</EquipDelay>
+			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->
+			<!-- Without an Energyshield DLL this is disabled for now-->
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.3</MoveSpeed>
+			<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+			<PainShockThreshold>0.15</PainShockThreshold>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>150</Plasteel>
+			<Uranium>50</Uranium>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Armor/Javelin/Interceptor/Interceptor</wornGraphicPath>
+		</apparel>
+		<comps>
+			<!-- You can remove this component if needed. Should work, but I haven't tested-->
+			<li Class="CompProperties_Reloadable">
+				<maxCharges>5</maxCharges>
+				<ammoDef>Chemfuel</ammoDef>
+				<ammoCountPerCharge>20</ammoCountPerCharge>
+				<baseReloadTicks>60</baseReloadTicks>
+				<soundReload>Standard_Reload</soundReload>
+				<chargeNoun>charge</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+		<verbs>
+			<li Class="SuitAbilities.Verbs.VerbProperties_Suit">
+				<verbClass>SuitAbilities.Verbs.Verb_AddHediffSelf</verbClass>
+				<label>boost</label>
+				<commandIcon>Things/Display/Colossus</commandIcon>
+				<!-- TODO icon path -->
+				<hasStandardCommand>true</hasStandardCommand>
+				<targetable>false</targetable>
+				<onlyManualCast>True</onlyManualCast>
+				<warmupTime>0.0</warmupTime>
+				<!-- warmupTime must be 0 in Verb_AddHediffSelf -->
+				<soundCast>PsychicShockLanceCast</soundCast>
+				<hediffDef>SuitBoost</hediffDef>
+				<severity>1</severity>
+				<bodyPartDef/>
+				<!-- bodyPart for affect. If not specified, it will be issued to the full body. -->
+				<stunTicks>0</stunTicks>
+				<!-- ticks for stun caster after cast -->
+			</li>
+		</verbs>
+	</ThingDef>
 	<!-- ================== Ranger ========================-->
-	
 	<ThingDef ParentName="ArmorJavelinBase">
 		<defName>Rimthem_Ranger</defName>
 		<label>Ranger Suit</label>
 		<description>Pending.</description>
 		<graphicData>
-			  <texPath>Things/Display/Ranger</texPath>
-			  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Display/Ranger</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<generateCommonality>1</generateCommonality>
 		<tickerType>Normal</tickerType>
@@ -132,7 +256,8 @@
 			<Insulation_Heat>12</Insulation_Heat>
 			<EquipDelay>14</EquipDelay>
 			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
-			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->  <!-- Without an Energyshield DLL this is disabled for now-->
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->
+			<!-- Without an Energyshield DLL this is disabled for now-->
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>0.3</MoveSpeed>
@@ -147,17 +272,52 @@
 		<apparel>
 			<wornGraphicPath>Things/Armor/Javelin/Ranger/Ranger</wornGraphicPath>
 		</apparel>
+		<comps>
+			<!-- You can remove this component if needed. Should work, but I haven't tested-->
+			<li Class="CompProperties_Reloadable">
+				<maxCharges>5</maxCharges>
+				<ammoDef>Chemfuel</ammoDef>
+				<ammoCountPerCharge>20</ammoCountPerCharge>
+				<baseReloadTicks>60</baseReloadTicks>
+				<soundReload>Standard_Reload</soundReload>
+				<chargeNoun>charge</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+		<verbs>
+			<li Class="SuitAbilities.Verbs.VerbProperties_Suit">
+				<label>launch frag grenade</label>
+				<verbClass>SuitAbilities.Verbs.Verb_LaunchProjectileStatic</verbClass>
+				<commandIcon>Things/Display/Colossus</commandIcon>
+				<!-- TODO icon path -->
+				<hasStandardCommand>true</hasStandardCommand>
+				<onlyManualCast>True</onlyManualCast>
+				<range>12.9</range>
+				<warmupTime>1.5</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>Shot_IncendiaryLauncher</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_GrenadierGrenade</defaultProjectile>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+				<burstShotCount>8</burstShotCount>
+				<forcedMissRadius>5</forcedMissRadius>
+			</li>
+		</verbs>
 	</ThingDef>
-	
 	<!-- ================== Storm ========================-->
-	
 	<ThingDef ParentName="ArmorJavelinBase">
 		<defName>Rimthem_Storm</defName>
 		<label>Storm Suit</label>
 		<description>Pending.</description>
 		<graphicData>
-			  <texPath>Things/Display/Storm</texPath>
-			  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Display/Storm</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<generateCommonality>1</generateCommonality>
 		<tickerType>Normal</tickerType>
@@ -174,7 +334,8 @@
 			<Insulation_Heat>12</Insulation_Heat>
 			<EquipDelay>14</EquipDelay>
 			<!--EnergyShieldRechargeRate>0.06</EnergyShieldRechargeRate>
-			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->  <!-- Without an Energyshield DLL this is disabled for now-->
+			<EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax-->
+			<!-- Without an Energyshield DLL this is disabled for now-->
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>0.3</MoveSpeed>
@@ -189,6 +350,36 @@
 		<apparel>
 			<wornGraphicPath>Things/Armor/Javelin/Storm/Storm</wornGraphicPath>
 		</apparel>
+		<comps>
+			<!-- You can remove this component if needed. Should work, but I haven't tested-->
+			<li Class="CompProperties_Reloadable">
+				<maxCharges>5</maxCharges>
+				<ammoDef>Chemfuel</ammoDef>
+				<ammoCountPerCharge>20</ammoCountPerCharge>
+				<baseReloadTicks>60</baseReloadTicks>
+				<soundReload>Standard_Reload</soundReload>
+				<chargeNoun>charge</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+		<verbs>
+			<li Class="SuitAbilities.Verbs.VerbProperties_Suit">
+				<verbClass>SuitAbilities.Verbs.Verb_Lightning</verbClass>
+				<label>lightning</label>
+				<commandIcon>Things/Display/Colossus</commandIcon>
+				<!-- TODO icon path -->
+				<hasStandardCommand>true</hasStandardCommand>
+				<targetable>true</targetable>
+				<onlyManualCast>True</onlyManualCast>
+				<range>30.0</range>
+				<warmupTime>2.5</warmupTime>
+				<targetParams>
+					<canTargetBuildings>true</canTargetBuildings>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<soundCast>PsychicShockLanceCast</soundCast>
+				<stunTicks>120</stunTicks>
+			</li>
+		</verbs>
 	</ThingDef>
-
 </Defs>
